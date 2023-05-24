@@ -58,6 +58,11 @@ std::vector<glm::vec4> arrow1Norms;
 std::vector<glm::vec2> arrow1TexCoords;
 std::vector<unsigned int> arrow1Indices;
 
+std::vector<glm::vec4> arrow2Verts;
+std::vector<glm::vec4> arrow2Norms;
+std::vector<glm::vec2> arrow2TexCoords;
+std::vector<unsigned int> arrow2Indices;
+
 std::vector<glm::vec4> bingBongVerts;
 std::vector<glm::vec4> bingBongNorms;
 std::vector<glm::vec2> bingBongTexCoords;
@@ -143,6 +148,27 @@ void loadModel(std::string plik) {
 			arrow1Indices.push_back(face.mIndices[j]);
 		}
 	}
+
+	//arrow2
+	mesh = scene->mMeshes[5];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		arrow2Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		arrow2Norms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		arrow2TexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			arrow2Indices.push_back(face.mIndices[j]);
+		}
+	}
 	
 
 	//BingBong
@@ -193,7 +219,6 @@ void error_callback(int error, const char* description) {
 	fputs(description, stderr);
 }
 
-
 void keyCallback(GLFWwindow* window,int key,int scancode,int action,int mods) {
     if (action==GLFW_PRESS) {
         if (key==GLFW_KEY_LEFT) speed_x=-PI/2;
@@ -227,8 +252,8 @@ void initOpenGLProgram(GLFWwindow* window) {
 
 	loadModel("clock.obj");
 	texWood = readTexture("wood.png");
-	texFace = readTexture("face.png");
 	texBingBong = readTexture("bingBong.png");
+	texFace = readTexture("face.png");
 }
 
 //Zwolnienie zasobów zajętych przez program
@@ -277,21 +302,21 @@ void drawScene(GLFWwindow* window,float angle_x,float angle_y) {
 	glEnableVertexAttribArray(sp->a("normal"));
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, clockNorms.data());
 	
-	//glEnableVertexAttribArray(sp->a("texCoord0"));
-	//glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, clockTexCoords.data());
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, clockTexCoords.data());
 
-	//glActiveTexture(GL_TEXTURE0); 
-	//glBindTexture(GL_TEXTURE_2D, texWood);
-	//glUniform1i(sp->u("tex"),0);
+	glActiveTexture(GL_TEXTURE0); 
+	glBindTexture(GL_TEXTURE_2D, texWood);
+	glUniform1i(sp->u("tex"),0);
 
     glDrawElements(GL_TRIANGLES,clockIndices.size(),GL_UNSIGNED_INT,clockIndices.data()); //Narysuj obiekt
 
-	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
-	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	//glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	
 	
-	/*
+	
 	// FACE LOADING
 	glEnableVertexAttribArray(sp->a("vertex"));
 	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, faceVerts.data());
@@ -302,15 +327,35 @@ void drawScene(GLFWwindow* window,float angle_x,float angle_y) {
 	glEnableVertexAttribArray(sp->a("texCoord0"));
 	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, faceTexCoords.data());
 
-	glActiveTexture(GL_TEXTURE0);
+	//glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texFace);
-	glUniform1i(sp->u("tex"), 0);
+	//glUniform1i(sp->u("tex"), 0);
 
 	glDrawElements(GL_TRIANGLES, faceIndices.size(), GL_UNSIGNED_INT, faceIndices.data()); //Narysuj obiekt
 	
-    glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
-	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
-	glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
+    //glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
+
+	// BINGBONG LOADING
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, bingBongVerts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, bingBongNorms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, bingBongTexCoords.data());
+
+	//glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texBingBong);
+	//glUniform1i(sp->u("tex"), 0);
+
+	glDrawElements(GL_TRIANGLES, bingBongIndices.size(), GL_UNSIGNED_INT, bingBongIndices.data()); //Narysuj obiekt
+
+	//glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	
 	
 	
@@ -323,34 +368,23 @@ void drawScene(GLFWwindow* window,float angle_x,float angle_y) {
 
 	glDrawElements(GL_TRIANGLES, arrow1Indices.size(), GL_UNSIGNED_INT, arrow1Indices.data()); //Narysuj obiekt
 
-	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
-	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	//glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	//glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	
-	
-
-	
-	// BINGBONG LOADING
+	// ARROW2 LOADING
 	glEnableVertexAttribArray(sp->a("vertex"));
-	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, bingBongVerts.data());
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, arrow2Verts.data());
 
 	glEnableVertexAttribArray(sp->a("normal"));
-	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, bingBongNorms.data());
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, arrow2Norms.data());
 
-	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, bingBongTexCoords.data());
-
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texBingBong);
-	glUniform1i(sp->u("tex"), 0);
-
-	glDrawElements(GL_TRIANGLES, bingBongIndices.size(), GL_UNSIGNED_INT, bingBongIndices.data()); //Narysuj obiekt
+	glDrawElements(GL_TRIANGLES, arrow2Indices.size(), GL_UNSIGNED_INT, arrow2Indices.data()); //Narysuj obiekt
 
 	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	glDisableVertexAttribArray(sp->a("texCoord0"));  //Wyłącz przesyłanie danych do atrybutu vertex
-	*/
-
+	
 
     glfwSwapBuffers(window); //Przerzuć tylny bufor na przedni
 }
