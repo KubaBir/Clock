@@ -5,7 +5,11 @@
       <FullPath>C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\x64\Debug\bio_szkielet_08_win.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\wood.png</FullPath>
+    </ContentFile>
+  </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>
