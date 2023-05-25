@@ -1,15 +1,15 @@
-# Blender 3.5.1 MTL File: 'everything_with_gears_good_arrowsblend (1).blend'
+# Blender 3.5.1 MTL File: 'clock.blend'
 # www.blender.org
 
 newmtl Material
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.002579 0.001317 0.000817
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
+map_Kd Blender/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg
 
 newmtl Material.002
 Ns 250.000000
@@ -19,7 +19,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd C:/Users/kubab/Models_to_project/1000_F_519683982_k5KtinfJqeWdDHIBxNvR2nTQt9CUkjfZ.jpg
+map_Kd Blender/1000_F_519683982_k5KtinfJqeWdDHIBxNvR2nTQt9CUkjfZ.jpg
 
 newmtl Material.004
 Ns 250.000000
@@ -29,17 +29,17 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd C:/Users/kubab/Models_to_project/Metal034_1K_Color.jpg
+map_Kd Blender/Metal034_1K_Color.jpg
 
 newmtl Material.007
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.052217 0.002613 0.024125
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
+map_Kd Blender/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg
 
 newmtl wood
 Ns 360.000000

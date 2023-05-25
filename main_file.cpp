@@ -181,7 +181,7 @@ void loadModel(std::string plik) {
 	}
 
 	//arrow2
-	mesh = scene->mMeshes[5];
+	mesh = scene->mMeshes[4];
 	for (int i = 0; i < mesh->mNumVertices; i++) {
 		aiVector3D vertex = mesh->mVertices[i];
 		arrow2Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
@@ -270,7 +270,7 @@ void initOpenGLProgram(GLFWwindow* window) {
 	texWood = readTexture("wood.png");
 	texBingBong = readTexture("bingBong.png");
 
-	loadModel("Clock_with_textures.obj");
+	loadModel("clock.obj");
 }
 
 //Zwolnienie zasobów zajętych przez program
