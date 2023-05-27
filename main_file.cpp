@@ -1,22 +1,3 @@
-/*
-Niniejszy program jest wolnym oprogramowaniem; możesz go
-rozprowadzać dalej i / lub modyfikować na warunkach Powszechnej
-Licencji Publicznej GNU, wydanej przez Fundację Wolnego
-Oprogramowania - według wersji 2 tej Licencji lub(według twojego
-wyboru) którejś z późniejszych wersji.
-
-Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on
-użyteczny - jednak BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej
-gwarancji PRZYDATNOŚCI HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH
-ZASTOSOWAŃ.W celu uzyskania bliższych informacji sięgnij do
-Powszechnej Licencji Publicznej GNU.
-
-Z pewnością wraz z niniejszym programem otrzymałeś też egzemplarz
-Powszechnej Licencji Publicznej GNU(GNU General Public License);
-jeśli nie - napisz do Free Software Foundation, Inc., 59 Temple
-Place, Fifth Floor, Boston, MA  02110 - 1301  USA
-*/
-
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_SWIZZLE
 
@@ -66,6 +47,11 @@ std::vector<glm::vec4> bingBongVerts;
 std::vector<glm::vec4> bingBongNorms;
 std::vector<glm::vec2> bingBongTexCoords;
 std::vector<unsigned int> bingBongIndices;
+
+std::vector<glm::vec4> gear1Verts;
+std::vector<glm::vec4> gear1Norms;
+std::vector<glm::vec2> gear1TexCoords;
+std::vector<unsigned int> gear1Indices;
 
 
 
@@ -229,6 +215,41 @@ void loadModel(std::string plik) {
 
 }
 
+
+void loadGears(std::string plik) {
+	Assimp::Importer importer;
+	const aiScene* scene = importer.ReadFile(plik, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_GenSmoothNormals);
+	if (!scene) {
+		std::cout << "Blad wczytywania pliku modelu" << std::endl;
+		return;
+	}
+	else std::cout << "Pobrano model" << std::endl;
+
+	aiMesh* mesh;
+
+
+	//body
+	mesh = scene->mMeshes[0];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		gear1Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		gear1Norms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		gear1TexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			gear1Indices.push_back(face.mIndices[j]);
+		}
+	}
+}
+
 //Procedura obsługi błędów
 void error_callback(int error, const char* description) {
 	fputs(description, stderr);
@@ -271,6 +292,7 @@ void initOpenGLProgram(GLFWwindow* window) {
 	texBingBong = readTexture("bingBong.png");
 
 	loadModel("clock.obj");
+	loadGears("gears.obj");
 }
 
 //Zwolnienie zasobów zajętych przez program
@@ -280,43 +302,9 @@ void freeOpenGLProgram(GLFWwindow* window) {
 }
 
 
-//Procedura rysująca zawartość sceny
-void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arrows) {
-	//************Tutaj umieszczaj kod rysujący obraz******************l
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glm::mat4 V = glm::lookAt(
-		glm::vec3(0.0f, -7.0f, -25.0f),
-		glm::vec3(0.0f, -7.0f, 0.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz widoku
-
-	glm::mat4 P = glm::perspective(50.0f * PI / 180.0f, aspectRatio, 0.01f, 450.0f); //Wylicz macierz rzutowania
-	
-	//glm::mat4 P = glm::perspective(glm::radians(50.0f), 1.0f, 1.0f, 50.0f);
-	sp->use();//Aktywacja programu cieniującego
-	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
-	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
-
-
-	glm::mat4 M = glm::mat4(1.0f);
-	
-	M = glm::rotate(M, PI / 2, glm::vec3(0.0f, 1.0f, 0.0f));
-	M = glm::rotate(M, -PI / 2, glm::vec3(0.0f, 0.0f, 1.0f));
-
-	M = glm::rotate(M, angle_y, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
-	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
+void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glm::mat4 M_arrow_hours = M;
 	glm::mat4 M_arrow_minutes = M;
-
-	sp->use();//Aktywacja programu cieniującego
-	//Przeslij parametry programu cieniującego do karty graficznej
-	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
-	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
-	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M));
-
-
-
-
 
 	// CLOCK LOADING
 	glEnableVertexAttribArray(sp->a("vertex"));
@@ -399,7 +387,7 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 
 	// ARROW2 LOADING
 	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(0.3f, 0.0f, 0.0f));
-	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows/60, glm::vec3(0.0f, -1.0f, 0.0f)); //Wylicz macierz modelu
+	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows / 60, glm::vec3(0.0f, -1.0f, 0.0f)); //Wylicz macierz modelu
 	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(-0.3f, 0.0f, 0.0f));
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M_arrow_minutes));
 	glEnableVertexAttribArray(sp->a("vertex"));
@@ -412,13 +400,47 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 
 	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+}
 
+//Procedura rysująca zawartość sceny
+void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arrows) {
+	//************Tutaj umieszczaj kod rysujący obraz******************l
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glm::mat4 V = glm::lookAt(
+		glm::vec3(0.0f, -7.0f, -25.0f),
+		glm::vec3(0.0f, -7.0f, 0.0f),
+		glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz widoku
+
+	glm::mat4 P = glm::perspective(50.0f * PI / 180.0f, aspectRatio, 0.01f, 450.0f); //Wylicz macierz rzutowania
+	
+	//glm::mat4 P = glm::perspective(glm::radians(50.0f), 1.0f, 1.0f, 50.0f);
+	sp->use();//Aktywacja programu cieniującego
+	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
+	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
+
+
+	glm::mat4 M = glm::mat4(1.0f);
+	
+	M = glm::rotate(M, PI / 2, glm::vec3(0.0f, 1.0f, 0.0f));
+	M = glm::rotate(M, -PI / 2, glm::vec3(0.0f, 0.0f, 1.0f));
+
+	M = glm::rotate(M, angle_y, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
+	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
 	
 
+	sp->use();//Aktywacja programu cieniującego
+	//Przeslij parametry programu cieniującego do karty graficznej
+	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
+	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M));
 
+	drawClock(window, M, angle_arrows);
 
 	glfwSwapBuffers(window); //Przerzuć tylny bufor na przedni
 }
+
+
 
 
 int main(void) {
