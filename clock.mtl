@@ -9,7 +9,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Blender/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg
+map_Kd Blender/Arrow.png
 
 newmtl Material.002
 Ns 250.000000
@@ -19,7 +19,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Blender/1000_F_519683982_k5KtinfJqeWdDHIBxNvR2nTQt9CUkjfZ.jpg
+map_Kd Blender/face.png
 
 newmtl Material.004
 Ns 250.000000
@@ -29,7 +29,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Blender/Metal034_1K_Color.jpg
+map_Kd Blender/gold.png
 
 newmtl Material.007
 Ns 250.000000
@@ -39,7 +39,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd Blender/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg
+map_Kd Blender/Arrow.png
 
 newmtl wood
 Ns 360.000000

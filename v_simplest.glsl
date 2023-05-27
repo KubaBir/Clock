@@ -20,7 +20,7 @@ out vec4 n;
 out vec4 v;
 
 void main(void) {
-    vec4 lp = vec4(0, 30, -40, 1); //light position, world space
+    vec4 lp = vec4(7, -15, -50, 1); //light position, world space
     l = normalize(V * lp - V * M * vertex); //vector towards the light in eye space
     v = normalize(vec4(0, 0, 0, 1) - V * M * vertex); //vector towards the viewer in eye space
     n = normalize(V * M * normal); //normal vector in eye space

@@ -75,6 +75,8 @@ GLuint texFace;
 GLuint texBingBong;
 GLuint texSilver;
 GLuint texGold;
+GLuint texArrow;
+
 
 
 
@@ -358,9 +360,10 @@ void initOpenGLProgram(GLFWwindow* window) {
 	sp = new ShaderProgram("v_simplest.glsl", NULL, "f_simplest.glsl");
 	texFace = readTexture("face.png");
 	texWood = readTexture("wood.png");
-	texBingBong = readTexture("bingBong.png");
 	texSilver = readTexture("silver.png");
 	texGold = readTexture("gold.png");
+	texArrow = readTexture("arrow.png");
+
 
 
 
@@ -389,7 +392,7 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, clockNorms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, clockTexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, clockTexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
@@ -431,12 +434,12 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, bingBongNorms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, bingBongTexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, bingBongTexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texBingBong);
+	glBindTexture(GL_TEXTURE_2D, texGold);
 
 	glDrawElements(GL_TRIANGLES, bingBongIndices.size(), GL_UNSIGNED_INT, bingBongIndices.data()); //Narysuj obiekt
 	glDisableVertexAttribArray(sp->a("vertex"));
@@ -444,15 +447,21 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glDisableVertexAttribArray(sp->a("texCoord0"));
 
 	// ARROW1 LOADING
-	M_arrow_hours = glm::translate(M_arrow_hours, glm::vec3(0.3f, 0.0f, 0.0f));
-	M_arrow_hours = glm::rotate(M_arrow_hours, angle_arrows, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
-	M_arrow_hours = glm::translate(M_arrow_hours, glm::vec3(-0.3f, 0.0f, 0.0f));
+	M_arrow_hours = glm::rotate(M_arrow_hours, angle_arrows, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M_arrow_hours));
 	glEnableVertexAttribArray(sp->a("vertex"));
 	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, arrow1Verts.data());
 
 	glEnableVertexAttribArray(sp->a("normal"));
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, arrow1Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, arrow1TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texArrow);
 
 	glDrawElements(GL_TRIANGLES, arrow1Indices.size(), GL_UNSIGNED_INT, arrow1Indices.data()); //Narysuj obiekt
 
@@ -461,15 +470,21 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 
 	// ARROW2 LOADING
-	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(0.3f, 0.0f, 0.0f));
-	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows / 60, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
-	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(-0.3f, 0.0f, 0.0f));
+	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows / 16, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M_arrow_minutes));
 	glEnableVertexAttribArray(sp->a("vertex"));
 	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, arrow2Verts.data());
 
 	glEnableVertexAttribArray(sp->a("normal"));
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, arrow2Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, arrow2TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texArrow);
 
 	glDrawElements(GL_TRIANGLES, arrow2Indices.size(), GL_UNSIGNED_INT, arrow2Indices.data()); //Narysuj obiekt
 
@@ -478,7 +493,7 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 }
 
 void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
-	M = glm::scale(M, glm::vec3(3.0, 3.0, 3.0));
+	//M = glm::scale(M, glm::vec3(3.0, 3.0, 3.0));
 	glm::mat4 GearSmall1 = M;
 	glm::mat4 GearSmall2 = M;
 	glm::mat4 GearBig1 = M;
@@ -495,7 +510,7 @@ void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear4Norms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear4TexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, gear4TexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
@@ -518,7 +533,7 @@ void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear2Norms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear2TexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, gear2TexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
@@ -543,7 +558,7 @@ void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear3Norms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear3TexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, gear3TexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
@@ -570,7 +585,7 @@ void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear1Norms.data());
 
 	glEnableVertexAttribArray(sp->a("texCoord0"));
-	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear1TexCoords.data());
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, gear1TexCoords.data());
 
 	glUniform1i(sp->u("textureMap0"), 0);
 	glUniform1i(sp->u("textureMap1"), 1);
@@ -606,7 +621,7 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 	/*M = glm::rotate(M, PI / 2, glm::vec3(0.0f, 1.0f, 0.0f));
 	M = glm::rotate(M, -PI / 2, glm::vec3(0.0f, 0.0f, 1.0f));*/
 
-	M = glm::rotate(M, angle_y, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
+	M = glm::rotate(M, angle_y, glm::vec3(1.0f, 0.0f, 0.0f)); //Wylicz macierz modelu
 	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
 	
 
@@ -615,7 +630,7 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
 	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
 
-	//drawClock(window, M, angle_arrows);
+	drawClock(window, M, angle_arrows);
 	drawGears(window, M, angle_arrows);
 
 	glfwSwapBuffers(window); //Przerzuć tylny bufor na przedni
