@@ -1,46 +1,46 @@
 ﻿  main_file.cpp
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(128,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(139,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(142,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(151,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(162,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(165,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(172,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(183,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(186,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(193,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(204,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(207,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(215,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(226,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(229,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(235,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(246,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(249,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(273,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(284,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(287,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(293,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(304,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(307,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(313,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(324,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(327,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(333,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(344,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(347,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(385,31): warning C4305: "argument": obcięcie z "double" do "GLclampf"
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(432,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(453,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(474,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(496,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(519,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(540,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(572,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(595,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(620,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(647,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(724,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(725,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\barte\Desktop\Projekt Grafika Git z kubha\main_file.cpp(726,46): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-  bio_szkielet_08_win.vcxproj -> C:\Users\barte\Desktop\Projekt Grafika Git z kubha\x64\Debug\bio_szkielet_08_win.exe
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(128,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(139,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(142,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(151,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(162,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(165,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(172,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(183,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(186,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(193,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(204,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(207,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(215,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(226,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(229,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(235,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(246,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(249,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(273,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(284,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(287,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(293,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(304,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(307,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(313,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(324,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(327,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(333,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(344,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(347,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(385,31): warning C4305: "argument": obcięcie z "double" do "GLclampf"
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(432,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(453,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(474,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(496,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(519,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(540,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(572,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(595,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(620,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(647,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(724,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(725,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(726,46): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+  bio_szkielet_08_win.vcxproj -> C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\x64\Debug\bio_szkielet_08_win.exe

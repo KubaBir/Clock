@@ -656,8 +656,8 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glm::mat4 V = glm::lookAt(
-		glm::vec3(0.0f, -7.0f, -25.0f),
-		glm::vec3(0.0f, -7.0f, 0.0f),
+		glm::vec3(0.0f, -5.0f, -25.0f),
+		glm::vec3(0.0f, -5.0f, 0.0f),
 		glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz widoku
 
 	glm::mat4 P = glm::perspective(50.0f * PI / 180.0f, aspectRatio, 0.01f, 450.0f); //Wylicz macierz rzutowania
