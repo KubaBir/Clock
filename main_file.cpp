@@ -48,6 +48,12 @@ std::vector<glm::vec4> bingBongNorms;
 std::vector<glm::vec2> bingBongTexCoords;
 std::vector<unsigned int> bingBongIndices;
 
+
+std::vector<glm::vec4> coneVerts;
+std::vector<glm::vec4> coneNorms;
+std::vector<glm::vec2> coneTexCoords;
+std::vector<unsigned int> coneIndices;
+
 std::vector<glm::vec4> gear1Verts;
 std::vector<glm::vec4> gear1Norms;
 std::vector<glm::vec2> gear1TexCoords;
@@ -67,6 +73,10 @@ std::vector<glm::vec4> gear4Verts;
 std::vector<glm::vec4> gear4Norms;
 std::vector<glm::vec2> gear4TexCoords;
 std::vector<unsigned int> gear4Indices;
+
+
+
+
 
 
 ShaderProgram* sp;
@@ -220,7 +230,26 @@ void loadModel(std::string plik) {
 			bingBongIndices.push_back(face.mIndices[j]);
 		}
 	}
-	//gear
+	//cone
+	mesh = scene->mMeshes[5];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		coneVerts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		coneNorms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		coneTexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			coneIndices.push_back(face.mIndices[j]);
+		}
+	}
 	
 
 
@@ -319,6 +348,7 @@ void loadGears(std::string plik) {
 			gear4Indices.push_back(face.mIndices[j]);
 		}
 	}
+	
 }
 
 //Procedura obsługi błędów
@@ -490,6 +520,28 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+
+
+	// Cone LOADING
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, coneVerts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, coneNorms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 2, GL_FLOAT, false, 0, coneTexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texArrow);
+
+	glDrawElements(GL_TRIANGLES, coneIndices.size(), GL_UNSIGNED_INT, coneIndices.data()); //Narysuj obiekt
+	glDisableVertexAttribArray(sp->a("vertex"));
+	glDisableVertexAttribArray(sp->a("normal"));
+	glDisableVertexAttribArray(sp->a("texCoord0"));
+
 }
 
 void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
