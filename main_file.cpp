@@ -53,19 +53,30 @@ std::vector<glm::vec4> gear1Norms;
 std::vector<glm::vec2> gear1TexCoords;
 std::vector<unsigned int> gear1Indices;
 
+std::vector<glm::vec4> gear2Verts;
+std::vector<glm::vec4> gear2Norms;
+std::vector<glm::vec2> gear2TexCoords;
+std::vector<unsigned int> gear2Indices;
+
+std::vector<glm::vec4> gear3Verts;
+std::vector<glm::vec4> gear3Norms;
+std::vector<glm::vec2> gear3TexCoords;
+std::vector<unsigned int> gear3Indices;
+
+std::vector<glm::vec4> gear4Verts;
+std::vector<glm::vec4> gear4Norms;
+std::vector<glm::vec2> gear4TexCoords;
+std::vector<unsigned int> gear4Indices;
 
 
 ShaderProgram* sp;
 GLuint texWood;
 GLuint texFace;
 GLuint texBingBong;
+GLuint texSilver;
+GLuint texGold;
 
-//Odkomentuj, żeby rysować kostkę
-float* vertices = myCubeVertices;
-float* normals = myCubeNormals;
-float* texCoords = myCubeTexCoords;
-float* colors = myCubeColors;
-int vertexCount = myCubeVertexCount;
+
 
 
 GLuint readTexture(const char* filename) {
@@ -143,7 +154,6 @@ void loadModel(std::string plik) {
 			faceIndices.push_back(face.mIndices[j]);
 		}
 	}
-	std::cout << scene->mNumMeshes;
 
 	//arrow1
 	mesh = scene->mMeshes[0];
@@ -228,7 +238,6 @@ void loadGears(std::string plik) {
 	aiMesh* mesh;
 
 
-	//body
 	mesh = scene->mMeshes[0];
 	for (int i = 0; i < mesh->mNumVertices; i++) {
 		aiVector3D vertex = mesh->mVertices[i];
@@ -246,6 +255,66 @@ void loadGears(std::string plik) {
 
 		for (int j = 0; j < face.mNumIndices; j++) {
 			gear1Indices.push_back(face.mIndices[j]);
+		}
+	}
+
+	mesh = scene->mMeshes[1];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		gear2Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		gear2Norms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		gear2TexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			gear2Indices.push_back(face.mIndices[j]);
+		}
+	}
+
+	mesh = scene->mMeshes[2];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		gear3Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		gear3Norms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		gear3TexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			gear3Indices.push_back(face.mIndices[j]);
+		}
+	}
+
+	mesh = scene->mMeshes[3];
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		aiVector3D vertex = mesh->mVertices[i];
+		gear4Verts.push_back(glm::vec4(vertex.x, vertex.y, vertex.z, 1));
+
+		aiVector3D normal = mesh->mNormals[i];
+		gear4Norms.push_back(glm::vec4(normal.x, normal.y, normal.z, 0));
+
+		aiVector3D texCoord = mesh->mTextureCoords[0][i];
+		gear4TexCoords.push_back(glm::vec2(texCoord.x, texCoord.y));
+	}
+
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		aiFace& face = mesh->mFaces[i];
+
+		for (int j = 0; j < face.mNumIndices; j++) {
+			gear4Indices.push_back(face.mIndices[j]);
 		}
 	}
 }
@@ -290,6 +359,10 @@ void initOpenGLProgram(GLFWwindow* window) {
 	texFace = readTexture("face.png");
 	texWood = readTexture("wood.png");
 	texBingBong = readTexture("bingBong.png");
+	texSilver = readTexture("silver.png");
+	texGold = readTexture("gold.png");
+
+
 
 	loadModel("clock.obj");
 	loadGears("gears.obj");
@@ -303,6 +376,8 @@ void freeOpenGLProgram(GLFWwindow* window) {
 
 
 void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M));
+
 	glm::mat4 M_arrow_hours = M;
 	glm::mat4 M_arrow_minutes = M;
 
@@ -370,7 +445,7 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 	// ARROW1 LOADING
 	M_arrow_hours = glm::translate(M_arrow_hours, glm::vec3(0.3f, 0.0f, 0.0f));
-	M_arrow_hours = glm::rotate(M_arrow_hours, angle_arrows, glm::vec3(0.0f, -1.0f, 0.0f)); //Wylicz macierz modelu
+	M_arrow_hours = glm::rotate(M_arrow_hours, angle_arrows, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
 	M_arrow_hours = glm::translate(M_arrow_hours, glm::vec3(-0.3f, 0.0f, 0.0f));
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M_arrow_hours));
 	glEnableVertexAttribArray(sp->a("vertex"));
@@ -387,7 +462,7 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 	// ARROW2 LOADING
 	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(0.3f, 0.0f, 0.0f));
-	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows / 60, glm::vec3(0.0f, -1.0f, 0.0f)); //Wylicz macierz modelu
+	M_arrow_minutes = glm::rotate(M_arrow_minutes, angle_arrows / 60, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
 	M_arrow_minutes = glm::translate(M_arrow_minutes, glm::vec3(-0.3f, 0.0f, 0.0f));
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M_arrow_minutes));
 	glEnableVertexAttribArray(sp->a("vertex"));
@@ -400,6 +475,112 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 	glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
 	glDisableVertexAttribArray(sp->a("normal"));  //Wyłącz przesyłanie danych do atrybutu vertex
+}
+
+void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
+	M = glm::scale(M, glm::vec3(3.0, 3.0, 3.0));
+	glm::mat4 GearSmall1 = M;
+	glm::mat4 GearSmall2 = M;
+	glm::mat4 GearBig1 = M;
+	glm::mat4 GearBig2 = M;
+
+
+	// SMALL GEAR 1
+	GearSmall1 = glm::rotate(GearSmall1, angle_arrows, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(GearSmall1));
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, gear4Verts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear4Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear4TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texGold);
+
+	glDrawElements(GL_TRIANGLES, gear4Indices.size(), GL_UNSIGNED_INT, gear4Indices.data()); //Narysuj obiekt
+	glDisableVertexAttribArray(sp->a("vertex"));
+	glDisableVertexAttribArray(sp->a("normal"));
+	glDisableVertexAttribArray(sp->a("texCoord0"));
+
+
+	// BIG GEAR 1
+	GearBig1 = glm::rotate(GearBig1, angle_arrows / 16, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(GearBig1));
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, gear2Verts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear2Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear2TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texSilver);
+
+	glDrawElements(GL_TRIANGLES, gear2Indices.size(), GL_UNSIGNED_INT, gear2Indices.data()); //Narysuj obiekt
+	glDisableVertexAttribArray(sp->a("vertex"));
+	glDisableVertexAttribArray(sp->a("normal"));
+	glDisableVertexAttribArray(sp->a("texCoord0"));
+
+	// BIG GEAR 2
+	GearBig2 = glm::translate(GearBig2, glm::vec3(1.35, 0, 0));
+	GearBig2 = glm::rotate(GearBig2, angle_arrows / 4, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
+	GearBig2 = glm::translate(GearBig2, glm::vec3(-1.35, 0, 0));
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(GearBig2));
+
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, gear3Verts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear3Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear3TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texSilver);
+
+	glDrawElements(GL_TRIANGLES, gear3Indices.size(), GL_UNSIGNED_INT, gear3Indices.data()); //Narysuj obiekt
+	glDisableVertexAttribArray(sp->a("vertex"));
+	glDisableVertexAttribArray(sp->a("normal"));
+	glDisableVertexAttribArray(sp->a("texCoord0"));
+
+
+
+	// SMALL GEAR 2
+	GearSmall2 = glm::translate(GearSmall2, glm::vec3(1.35, 0, 0));
+	GearSmall2 = glm::rotate(GearSmall2, angle_arrows / 4, glm::vec3(0.0f, 0.0f, -1.0f)); //Wylicz macierz modelu
+	GearSmall2 = glm::translate(GearSmall2, glm::vec3(-1.35, 0, 0));
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(GearSmall2));
+
+	glEnableVertexAttribArray(sp->a("vertex"));
+	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, gear1Verts.data());
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 4, GL_FLOAT, false, 0, gear1Norms.data());
+
+	glEnableVertexAttribArray(sp->a("texCoord0"));
+	glVertexAttribPointer(sp->a("texCoord0"), 4, GL_FLOAT, false, 0, gear1TexCoords.data());
+
+	glUniform1i(sp->u("textureMap0"), 0);
+	glUniform1i(sp->u("textureMap1"), 1);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texGold);
+
+	glDrawElements(GL_TRIANGLES, gear1Indices.size(), GL_UNSIGNED_INT, gear1Indices.data()); //Narysuj obiekt
+	glDisableVertexAttribArray(sp->a("vertex"));
+	glDisableVertexAttribArray(sp->a("normal"));
+	glDisableVertexAttribArray(sp->a("texCoord0"));
 }
 
 //Procedura rysująca zawartość sceny
@@ -422,8 +603,8 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 
 	glm::mat4 M = glm::mat4(1.0f);
 	
-	M = glm::rotate(M, PI / 2, glm::vec3(0.0f, 1.0f, 0.0f));
-	M = glm::rotate(M, -PI / 2, glm::vec3(0.0f, 0.0f, 1.0f));
+	/*M = glm::rotate(M, PI / 2, glm::vec3(0.0f, 1.0f, 0.0f));
+	M = glm::rotate(M, -PI / 2, glm::vec3(0.0f, 0.0f, 1.0f));*/
 
 	M = glm::rotate(M, angle_y, glm::vec3(0.0f, 0.0f, 1.0f)); //Wylicz macierz modelu
 	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
@@ -433,9 +614,9 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 	//Przeslij parametry programu cieniującego do karty graficznej
 	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
 	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
-	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M));
 
-	drawClock(window, M, angle_arrows);
+	//drawClock(window, M, angle_arrows);
+	drawGears(window, M, angle_arrows);
 
 	glfwSwapBuffers(window); //Przerzuć tylny bufor na przedni
 }
