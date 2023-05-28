@@ -1,62 +1,63 @@
-﻿  main_file.cpp
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(142,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(153,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(156,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(165,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(176,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(179,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(186,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(197,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(200,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(207,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(218,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(221,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(229,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(240,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(243,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(249,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(260,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(263,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(286,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(297,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(300,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(306,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(317,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(320,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(326,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(337,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(340,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(346,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(357,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(360,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(366,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(377,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(380,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(386,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(397,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(400,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(406,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(417,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(420,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(426,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(437,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(440,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(476,31): warning C4305: "argument": obcięcie z "double" do "GLclampf"
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(521,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(542,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(563,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(585,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(608,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(629,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(665,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(687,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(711,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(733,98): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(755,96): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(775,104): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(797,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(817,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(886,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(887,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(888,46): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
-  bio_szkielet_08_win.vcxproj -> C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\x64\Debug\bio_szkielet_08_win.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: Katalog pośredni (x64\Debug\) zawiera pliki udostępnione z innego projektu (bio_szkielet_08_win.vcxproj). Może to spowodować niepoprawne zachowanie podczas oczyszczania i ponownej kompilacji.
+  main_file.cpp
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(143,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(154,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(157,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(166,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(177,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(180,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(187,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(198,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(201,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(208,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(219,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(222,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(230,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(241,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(244,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(250,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(261,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(264,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(287,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(298,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(301,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(307,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(318,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(321,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(327,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(338,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(341,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(347,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(358,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(361,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(367,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(378,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(381,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(387,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(398,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(401,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(407,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(418,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(421,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(427,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(438,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(441,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(480,31): warning C4305: "argument": obcięcie z "double" do "GLclampf"
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(524,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(541,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(558,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(577,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(596,90): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(613,86): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(647,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(668,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(691,94): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(712,98): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(733,96): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(752,104): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(773,100): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(792,88): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(867,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(868,37): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\main_file.cpp(869,46): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+  bio_szkielet_08_win.vcxproj -> C:\Users\kubab\Desktop\Zegar\bio_szkielet_08_win\x64\Debug\clock.exe
