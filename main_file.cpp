@@ -106,6 +106,32 @@ GLuint texGold;
 GLuint texArrow;
 
 
+float bingBong_pos = 0.5;
+float bingBong_dir = 0.1;
+
+float calc_acceleration(float t){
+	return -t*(t-1);
+}
+
+glm::mat4 calc_bingBong(glm::mat4 bingBong) {
+
+	if (bingBong_pos < 0.0) bingBong_dir = 0.1;
+	else if (bingBong_pos > 1.0) bingBong_dir = -0.1;
+
+	float movement;
+	if (speed_arrows > 0)
+		movement = std::max(calc_acceleration(bingBong_pos), 0.005f) * bingBong_dir;
+	else
+		movement = 0;
+
+	//std::cout << bingBong_pos << " " << movement << std::endl;
+
+	bingBong = glm::rotate(bingBong, (bingBong_pos + movement)/5, glm::vec3(0.0, 0.0, 1.0));
+	bingBong_pos += movement;
+	
+	return bingBong;
+}
+
 GLuint readTexture(const char* filename) {
 	GLuint tex;
 	glActiveTexture(GL_TEXTURE0);
@@ -506,6 +532,7 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 	glm::mat4 M_arrow_hours = M;
 	glm::mat4 M_arrow_minutes = M;
+	glm::mat4 BingBong = M;
 
 	// CLOCK LOADING
 	glEnableVertexAttribArray(sp->a("vertex"));
@@ -542,6 +569,11 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 
 	// BINGBONG LOADING
+	BingBong = glm::rotate(BingBong, -0.1f, glm::vec3(0.0, 0.0, 1.0));
+
+	BingBong = calc_bingBong(BingBong);
+	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(BingBong));
+
 	glEnableVertexAttribArray(sp->a("vertex"));
 	glVertexAttribPointer(sp->a("vertex"), 4, GL_FLOAT, false, 0, bingBongVerts.data());
 
