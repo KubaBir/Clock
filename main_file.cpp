@@ -106,6 +106,7 @@ GLuint texArrow;
 
 float bingBong_pos = 0.5;
 float bingBong_dir = 0.1;
+float movement = 0;
 
 float calc_acceleration(float t){
 	return -t*(t-1);
@@ -115,12 +116,6 @@ glm::mat4 calc_bingBong(glm::mat4 bingBong) {
 
 	if (bingBong_pos < 0.0) bingBong_dir = 0.1;
 	else if (bingBong_pos > 1.0) bingBong_dir = -0.1;
-
-	float movement;
-	if (speed_arrows > 0)
-		movement = std::max(calc_acceleration(bingBong_pos), 0.005f) * bingBong_dir;
-	else
-		movement = 0;
 
 	//std::cout << bingBong_pos << " " << movement << std::endl;
 
@@ -567,8 +562,8 @@ void drawClock(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 
 
 	// BINGBONG LOADING
-	BingBong = glm::rotate(BingBong, -0.1f, glm::vec3(0.0, 0.0, 1.0));
 
+	BingBong = glm::rotate(BingBong, -0.1f, glm::vec3(0.0, 0.0, 1.0));
 	BingBong = calc_bingBong(BingBong);
 	glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(BingBong));
 
@@ -892,7 +887,9 @@ int main(void) {
 		angle_x += speed_x * glfwGetTime(); //Zwiększ/zmniejsz kąt obrotu na podstawie prędkości i czasu jaki upłynał od poprzedniej klatki
 		angle_y += speed_y * glfwGetTime(); //Zwiększ/zmniejsz kąt obrotu na podstawie prędkości i czasu jaki upłynał od poprzedniej klatki
 		angle_arrow += speed_arrows * glfwGetTime();
-		
+		if (speed_arrows > 0)
+			movement = std::max(calc_acceleration(bingBong_pos), 0.005f) * bingBong_dir * glfwGetTime() * 150;
+		else movement = 0;
 
 		glfwSetTime(0); //Zeruj timer
 		drawScene(window, angle_x, angle_y,angle_arrow); //Wykonaj procedurę rysującą
