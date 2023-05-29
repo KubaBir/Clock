@@ -825,7 +825,6 @@ void drawGears(GLFWwindow* window, glm::mat4 M, float angle_arrows) {
 	glDisableVertexAttribArray(sp->a("texCoord0"));
 }
 
-//Procedura rysująca zawartość sceny
 void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arrows) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

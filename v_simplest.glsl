@@ -19,7 +19,7 @@ out vec2 iTexCoord0;
 
 void main(void) {
     vec4 lp = vec4(7, -15, -20, 1); //pozcyja œwiat³a, przestrzeñ œwiata
-    vec4 lp2 = vec4(-5, 15, -20, 1); //pozcyja œwiat³a, przestrzeñ œwiata
+    vec4 lp2 = vec4(-5, 10, -10, 1); //pozcyja œwiat³a, przestrzeñ œwiata
 
     l = normalize(V * lp - V*M*vertex); //wektor do œwiat³a w przestrzeni oka
     l2 = normalize(V * lp2 - V*M*vertex); //wektor do œwiat³a w przestrzeni oka
