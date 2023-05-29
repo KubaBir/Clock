@@ -95,8 +95,6 @@ std::vector<glm::vec4> shaftNorms;
 std::vector<glm::vec2> shaftTexCoords;
 std::vector<unsigned int> shaftIndices;
 
-
-
 ShaderProgram* sp;
 GLuint texWood;
 GLuint texFace;
@@ -844,12 +842,8 @@ void drawScene(GLFWwindow* window, float angle_x, float angle_y, float angle_arr
 
 	glm::mat4 M = glm::mat4(1.0f);
 	
-	M = glm::rotate(M, angle_y, glm::vec3(1.0f, 0.0f, 0.0f)); //Wylicz macierz modelu
-	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
-	
-	sp->use();//Aktywacja programu cieniującego
-	glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
-	glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
+	M = glm::rotate(M, angle_y, glm::vec3(1.0f, 0.0f, 0.0f));
+	M = glm::rotate(M, angle_x, glm::vec3(0.0f, 1.0f, 0.0f));
 
 	if (show_clock) {
 		drawClock(window, M, angle_arrows);
